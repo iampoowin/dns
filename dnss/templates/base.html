@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INA Digital Academy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Top Contact Bar -->
+    <div style="background-color: var(--text-primary); color: white; padding: 0.5rem 5%; display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 500;">
+        <div style="display: flex; gap: 2rem;">
+            <span style="display: flex; align-items: center; gap: 0.5rem;">📞 Call Support: 6379059739</span>
+            <span style="display: flex; align-items: center; gap: 0.5rem;">📧 Send Email: myinaitsolutionspvtltd@gmail.com</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="nav">
+        <h1>INA Digital Academy</h1>
+        <div class="nav-links" style="align-items: center;">
+            <a href="{{ url_for('home') }}">Homepage</a>
+            <a href="{{ url_for('course_page') }}">Courses</a>
+            <a href="{{ url_for('contact') }}">Contact us</a>
+            <a href="{{ url_for('about') }}">About Us</a>
+            <a href="{{ url_for('course_page') }}" class="btn" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; margin-left: 1rem;">Start Learning Today</a>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>📞 6379059739</p>
+        <p>📧 myinaitsolutionspvtltd@gmail.com</p>
+        <p class="footer-copy">© INA IT Solutions OPC Pvt Ltd</p>
+    </footer>
+
+</body>
+</html>
