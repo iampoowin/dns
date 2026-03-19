@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <div class="badge">Course Details</div>
+        <h2 class="section-title" style="margin-bottom: 1rem;">{{ course.title }}</h2>
+        
+        <div class="card-price" style="justify-content: center; margin-bottom: 2rem;">
+            ₹{{ course.price }} <span>/ One-time payment</span>
+        </div>
+        
+        <div class="detail-box">
+            <h3 style="margin-bottom: 1rem; color: var(--text-primary); font-weight: 600;">What's Included:</h3>
+            <ul class="includes-list">
+                {% for item in course.includes %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            
+            {% if course.bonus %}
+            <div class="bonus-section">
+                <h4>Bonus Content included:</h4>
+                <ul class="includes-list">
+                    {% for bonus in course.bonus %}
+                    <li>{{ bonus }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div style="margin-top: 3rem;">
+            <a href="{{ url_for('payment', id=id) }}" class="btn" style="width: 100%; max-width: 400px; font-size: 1.15rem; padding: 1.25rem;">Enroll Now - ₹{{ course.price }}</a>
+            <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.85rem;">🔒 Secure checkout powered by AirPay</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
