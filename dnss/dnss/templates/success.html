@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center; padding: 4rem 2rem;">
+        <div class="status-icon status-success">✓</div>
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; letter-spacing: -1px;">Payment Successful!</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-secondary);">Thank you for your enrollment. We've sent your course access details to your email address.</p>
+        
+        <div class="highlight-box" style="display: inline-block;">
+            <p style="color: var(--text-primary); margin-bottom: 0.5rem;"><strong>Transaction ID:</strong> TXN-1984271</p>
+            <p style="color: var(--text-primary);"><strong>Status:</strong> Completed 🟢</p>
+        </div>
+        <br>
+        <a href="{{ url_for('course_page') }}" class="btn">Go to Dashboard</a>
+    </div>
+</div>
+{% endblock %}
